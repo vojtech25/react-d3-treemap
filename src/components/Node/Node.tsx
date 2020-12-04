@@ -69,7 +69,7 @@ class Node extends React.Component<INodeProps, {}> {
                     </text>
                 </a>
                 {!hideNumberOfChildren && this._getNumberOfItemsRect()}
-                <title>{label + "\n" + valueWithFormat + ((valueUnit == "") ? "" : " ") + valueUnit + "\n" + nodeTotalNodes + "/" + globalTotalNodes}</title>
+                <title>{label + "\n" + valueWithFormat + ((valueUnit === "") ? "" : " ") + valueUnit + "\n" + nodeTotalNodes + "/" + globalTotalNodes}</title>
             </g>
         );
     }
@@ -138,7 +138,7 @@ class Node extends React.Component<INodeProps, {}> {
          } = this.props;
 
         if (hasChildren === true) {
-            const fullLabel = hideValue ? label : label + "\xa0(" + valueWithFormat + ((valueUnit == "") ? "" : " ") + valueUnit + ")";
+            const fullLabel = hideValue ? label : label + "\xa0(" + valueWithFormat + ((valueUnit === "") ? "" : " ") + valueUnit + ")";
             return (
                 <tspan fontSize={fontSize} fill={textColor} dx={4} dy={fontSize} >
                     {fullLabel}
@@ -146,7 +146,7 @@ class Node extends React.Component<INodeProps, {}> {
             );
         } else {
             if (label) {
-                const fullLabel = hideValue ? label.split(/(?=[A-Z][^A-Z])/g) : label.split(/(?=[A-Z][^A-Z])/g).concat("(" + valueWithFormat + ((valueUnit == "") ? "" : " ") + valueUnit + ")");
+                const fullLabel = hideValue ? label.split(/(?=[A-Z][^A-Z])/g) : label.split(/(?=[A-Z][^A-Z])/g).concat("(" + valueWithFormat + ((valueUnit === "") ? "" : " ") + valueUnit + ")");
                 return fullLabel.map((item, index) => {
                     return (
                         <tspan fontSize={fontSize} fill={textColor} key={index} x={4} dy={fontSize} >
