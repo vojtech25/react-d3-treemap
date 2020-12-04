@@ -63,6 +63,7 @@ export interface INodeProps {
 
     // Events props
     onClick?: any;
+    onLeafClick?: any;
 
     // Others
     hasChildren: boolean;
