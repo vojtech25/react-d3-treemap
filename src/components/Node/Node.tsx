@@ -16,6 +16,7 @@ class Node extends React.Component<INodeProps, {}> {
         const {
             bgColor,
             onClick,
+            onLeafClick,
             name,
             id,
             label,
@@ -43,7 +44,7 @@ class Node extends React.Component<INodeProps, {}> {
                 transform={`translate(${xTranslated},${yTranslated})`}
                 className={styles.node + " " + (nodeTotalNodes === globalTotalNodes ? styles.rootNode : null)}
                 id={id.toString()}
-                onClick={hasChildren ? onClick : null}
+                onClick={hasChildren ? onClick : onLeafClick}
                 style={{ cursor }}
             >
                 <rect

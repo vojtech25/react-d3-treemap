@@ -15,6 +15,8 @@ export interface ITreeMapProps {
      */
     valueFormat?: string;
 
+    onLeafClick: any;
+
     /*
      * Create and interpolates a background color range
      */

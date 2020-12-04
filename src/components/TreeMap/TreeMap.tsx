@@ -35,7 +35,8 @@ class TreeMap extends React.Component<ITreeMapProps, ITreeMapState> {
     valueFormat: ",d",
     valueUnit: "MB",
     disableBreadcrumb: false,
-    colorModel: ColorModel.NumberOfChildren
+    colorModel: ColorModel.NumberOfChildren,
+    onLeafClick: null
   };
 
   // Note. This treemap element initially was using treemap and hierarchy directly on the render.
@@ -240,7 +241,7 @@ class TreeMap extends React.Component<ITreeMapProps, ITreeMapState> {
   }
 
   private _getNode(node: HierarchyRectangularNode<{}>) {
-    const { valueFormat, id: treemapId } = this.props;
+    const { valueFormat, id: treemapId , onLeafClick} = this.props;
     const { width, height, totalNodes } = this.state;
 
     const name = (node as any).data.name;
@@ -300,6 +301,7 @@ class TreeMap extends React.Component<ITreeMapProps, ITreeMapState> {
         className="node"
         hasChildren={hasChildren}
         onClick={this._onNodeClick}
+        onLeafClick={onLeafClick}
         valueWithFormat={valueWithFormat}
         globalHeight={height}
         globalWidth={width}
