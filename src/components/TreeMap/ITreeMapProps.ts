@@ -4,6 +4,8 @@ export interface ITreeMapProps {
     height: number;
     data: any;
 
+    fontSize: number;
+
     /*
         Unit for values. For example MB
     */
